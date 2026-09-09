@@ -1,10 +1,10 @@
-# Fractals
+# ASCII Mandelbrot Generator
 
 **This project is no longer under active development.**
 
 ## About
 
-This was just something I wanted to try one weekend in 2022: printing a fractal, entirely in C#, no external graphics libraries.
+This was just something I wanted to try one weekend in 2022, generating an ASCII mandelbrot set.
 
 ## Goal
 
