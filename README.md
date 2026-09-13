@@ -4,7 +4,7 @@ This project is no longer under active development.
 
 About
 
-This was just something I wanted to try one weekend in 2022, printing a fractal.
+This was just something I wanted to try one weekend in 2022, printing the mandelbrot set.
 
 Goal
 
