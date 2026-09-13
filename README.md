@@ -1,29 +1,33 @@
-# Fractals
+Fractals
 
-**This project is no longer under active development.**
+This project is no longer under active development.
 
-## About
+About
 
-This was just something I wanted to try one weekend in 2022: printing a fractal, entirely in C#, no external graphics libraries.
+This was just something I wanted to try one weekend in 2022, printing a fractal.
 
-## Goal
+Goal
 
-Render the whole Mandelbrot set as text, at whatever resolution you want, written out to a file so it isn't limited to console dimensions.
+Render the whole Mandelbrot set as text, at whatever resolution you want, written out to a file.
 
-## Implementation
+Implementation
 
-For each point on the output grid, the program maps its coordinates to a point on the complex plane (fixed to the region that contains the whole Mandelbrot set), then repeatedly applies the Mandelbrot iteration (z = z² + c) to that point, counting whether it stays bounded or escapes to infinity within a fixed number of iterations. That gives a black-or-white value per point.
+For each point on the output grid, it maps the coordinates to a point on the complex plane, then applies the Mandelbrot iteration (z = z² + c) and checks whether it stays bounded or escapes within a fixed number of iterations.
 
-To get more than a flat grid of blocky pixels out of plain text, it renders two rows of values per line of output using the Unicode half-block characters (` ▀▄█`), effectively doubling the vertical resolution compared to just printing one character per pixel. The width is calculated automatically from the height so the output isn't stretched, since the set spans a wider range on the real axis than the imaginary axis.
+It renders two rows of values per line using the Unicode half-block characters ( ▀▄█), doubling the vertical resolution. Width is calculated automatically from the height to match the Mandelbrot set's aspect ratio.
 
-## Usage
+Usage
 
 Run it with a single argument for the height in characters, for example:
 
-```
 dotnet run 100
-```
 
-Width is calculated automatically to match the Mandelbrot set's aspect ratio. If no argument is given, it defaults to a height of 60.
+If no argument is given, it defaults to a height of 60.
 
-The result is written to `out.txt` in the project folder, meant to be viewed in an editor with word-wrap off, using a monospace font.
+The result is written to out.txt in the project folder, meant to be viewed in an editor with word-wrap off, using a monospace font.
+
+## Example Output
+
+`dotnet run 300`
+
+<img width="1188" height="1052" alt="image" src="https://github.com/user-attachments/assets/a009dad0-92bb-4b78-aa8a-3fbca09c491c" />
